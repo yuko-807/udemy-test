@@ -115,3 +115,75 @@
 
 // const arr7 =[...arr4, ...arr5];
 // console.log(arr7);
+
+// /* Map,filterを使った配列処理
+const nameArr = ["tanaka", "yama", "yuko"];
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(`${index}番目は${nameArr[index]}です。`);
+// }
+
+// const nameArr2 = nameArr.map((name)=> {
+//   return name;
+// })
+// console.log(nameArr2);
+
+// nameArr.map((name,index) => console.log(`${index + 1}番目は${name}です。`));
+
+// 配列をループして処理する。
+
+// const numArr =[1,2,3,4,5];
+// const newNumArr =numArr.filter((num) => {
+//   return num % 2 === 1;
+// })
+// console.log(newNumArr);
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "yuko") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
+
+// /*参考演算子→ifを書く必要がない
+// ある条件？条件がTrueの時：条件がfalseの時
+
+const val1 = 1 > 0 ? "true" : "false";
+console.log(val1);
+
+const num = "1300";
+console.log(num.toLocaleString());
+// toLocaleString3ずつで区切る
+
+const formatteNum =
+  typeof num === "number" ? num.toLocaleString() : "数値を入力してください。";
+console.log(formatteNum);
+
+const checkSum = (num1, num2) => {
+  return num1 + num2 > 100 ? "100 over" : "OK";
+};
+
+console.log(checkSum(50, 40));
+
+/**論理演算しについて */
+
+const flag1 = true;
+const flag2 = false;
+
+if (flag1 || flag2) {
+  console.log("1か２はTrueになる");
+}
+if (flag1 && flag2) {
+  console.log("1も２もTrueになる");
+}
+
+// ||は左側がfalseなら右側を返す
+const num5 = 100;
+const fee = num || "金額未設定です";
+console.log(fee);
+
+// &&は左側がTrueなら右側を返す
+const num2 = 100;
+const fee2 = num && "何か設定されました";
+console.log(fee2);
